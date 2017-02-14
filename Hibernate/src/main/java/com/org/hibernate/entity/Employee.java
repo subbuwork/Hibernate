@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.org.hibernate;
+package com.org.hibernate.entity;
 
 /**
  * This is xml based configuration entity class.. 

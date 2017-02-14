@@ -5,7 +5,7 @@
  
  <hibernate-mapping>
  
- <class name="com.org.hibernate.Employee" table="employee">
+ <class name="com.org.hibernate.entity.Employee" table="employee">
  <meta attribute="class-description">
  This class contains the employee detail.
  </meta>

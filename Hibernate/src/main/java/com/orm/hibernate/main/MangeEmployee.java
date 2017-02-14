@@ -12,7 +12,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.org.hibernate.Employee;
+import com.org.hibernate.entity.Employee;
 
 /**
  * @author subbu

@@ -1,4 +1,4 @@
-package com.org.hibernate;
+package com.org.hibernate.entity;
 
 /**
  * Hello world!
