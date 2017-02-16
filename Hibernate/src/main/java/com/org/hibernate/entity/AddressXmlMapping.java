@@ -3,47 +3,34 @@
  */
 package com.org.hibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
 
 /**
- * This is entity class annotated based association demonstration Many to one.
+ * This class for demonstrating xml configuration for Many to one association
  * @author subbu
  *
  */
-@Entity
-@Table(name="address")
-public class Address {
+public class AddressXmlMapping {
 	
-	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	@Column(name="id")
+
 	private int id;
-	
-	@Column(name = "street_name")
+
 	private String streetName;
-	
-	@Column(name = "city_name")
+
 	private String cityName;
 	
-	@Column(name = "state_name")
+
 	private String stateName;
 	
-	@Column(name = "zipcode")
 	private int zipCode;
 	
-	@Column(name = "country_name")
 	private String countryName;
 	
 	
-	public Address(){}
+	public AddressXmlMapping(){}
 
 
-	public Address(String streetName, String cityName, String stateName,
+	public AddressXmlMapping(String streetName, String cityName, String stateName,
 			int zipCode, String countryName) {
 		super();
 		this.streetName = streetName;
@@ -124,8 +111,6 @@ public class Address {
 	public int getZipCode() {
 		return zipCode;
 	}
-
-
 	/**
 	 * @param zipCode the zipCode to set
 	 */

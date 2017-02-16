@@ -37,7 +37,7 @@ public class ManageAssosiations {
 		
 	}
 	
-	private Address addAddress(String string, String string2, String string3,
+/*	private Address addAddress(String string, String string2, String string3,
 			int i, String string4) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
@@ -54,7 +54,7 @@ public class ManageAssosiations {
 			session.close();
 		}
 		return address;
-	}
+	}*/
 	
 	private void addStudent() {
 		Session session = sessionFactory.openSession();

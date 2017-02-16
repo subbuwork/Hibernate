@@ -3,52 +3,34 @@
  */
 package com.org.hibernate.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 /**
- *  This is entity class annotated based association demonstration Many to one.
+ * This class for demonstrating xml configuration for Many to one association
  * @author subbu
  *
  */
-@Entity
-@Table(name = "student")
-public class Student {
-	
-	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	@Column(name="sid")
+
+public class StudentXmlMapping {
+
 	private int sid;
 	
-	@Column(name="f_name")
 	private String fName;
 	
-	@Column(name="l_name")
 	private String lName;
 	
-	@Column(name="col_name")
 	private String colName;
 	
-	@Column(name="branch_name")
 	private String branchName;
 	
-	@Column(name="grade")
 	private String grade;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Address address;
+	private AddressXmlMapping address;
 	
-	public Student(){}
+	public StudentXmlMapping(){}
 
-	public Student(String fName, String lName, String colName,
-			String branchName, String grade, Address address) {
+	public StudentXmlMapping(String fName, String lName, String colName,
+			String branchName, String grade, AddressXmlMapping address) {
 		super();
+		//this.sid =sid;
 		this.fName = fName;
 		this.lName = lName;
 		this.colName = colName;
@@ -144,14 +126,14 @@ public class Student {
 	/**
 	 * @return the address
 	 */
-	public Address getAddress() {
+	public AddressXmlMapping getAddress() {
 		return address;
 	}
 
 	/**
 	 * @param address the address to set
 	 */
-	public void setAddress(Address address) {
+	public void setAddress(AddressXmlMapping address) {
 		this.address = address;
 	}
 	

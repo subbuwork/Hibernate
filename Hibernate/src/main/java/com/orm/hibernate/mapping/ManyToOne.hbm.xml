@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping>
+ <class name="com.org.hibernate.entity.StudentXmlMapping" table="student" >
+<id name="sid" type="int" column="sid">
+<generator class="increment"></generator>
+</id> 
+ <property name="fName" column="f_name" type="string"></property>
+ <property name="lName" column="l_name" type="string"></property>
+ <property name="colName" column="col_name" type="string"></property>
+ <property name="branchName" column="branch_name"></property>
+ <property name="grade" column="grade"></property>
+ <many-to-one name="address" column="address_id" 
+              class="com.org.hibernate.entity.AddressXmlMapping" not-null="true" cascade="all">
+ </many-to-one>
+ </class>
+ 
+ <class name="com.org.hibernate.entity.AddressXmlMapping" table="address">
+<id name="id" type="int" column="id">
+<generator class="increment"></generator>
+</id> 
+ <property name="streetName" column="street_name" type="string"></property>
+ <property name="cityName" column="city_name" type="string"></property>
+ <property name="stateName" column="state_name" type="string"></property>
+ <property name="zipCode" column="zipcode"></property>
+ <property name="countryName" column="country_name"></property>
+ </class> 
+ </hibernate-mapping>

@@ -12,8 +12,16 @@
    <property name="hibernate.connection.password">Admin@123</property>
     <property name="show_sql">true</property>
     <!-- <property name="hbm2ddl.auto">create</property> -->
+    
    <!-- List of XML mapping files -->
    <mapping resource="com/orm/hibernate/mapping/Employee.hbm.xml"/>
+   <mapping resource="com/orm/hibernate/mapping/AddressXmlMapping.hbm.xml"/>
+   <mapping resource="com/orm/hibernate/mapping/Certificates.hbm.xml"/>
+   
+   <mapping resource="com/orm/hibernate/mapping/ManyToOne.hbm.xml"/>
+   <mapping resource="com/orm/hibernate/mapping/OneToMany.hbm.xml"/>
+   
+   <!-- Annotation based entities -->
    <mapping class="com.org.hibernate.entity.Student"/>
    <mapping class="com.org.hibernate.entity.Address"/>
 

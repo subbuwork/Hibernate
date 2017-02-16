@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping>
+ <class name="com.org.hibernate.entity.AddressXmlMapping" table="address">
+<id name="id" type="int" column="id">
+<generator class="native"></generator>
+</id> 
+ <property name="streetName" column="street_name" type="string"></property>
+ <property name="cityName" column="city_name" type="string"></property>
+ <property name="stateName" column="state_name" type="string"></property>
+ <property name="zipCode" column="zipcode"></property>
+ <property name="countryName" column="country_name"></property>
+ </class>
+ </hibernate-mapping>
