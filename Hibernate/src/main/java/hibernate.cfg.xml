@@ -20,10 +20,14 @@
    
    <mapping resource="com/orm/hibernate/mapping/ManyToOne.hbm.xml"/>
    <mapping resource="com/orm/hibernate/mapping/OneToMany.hbm.xml"/>
+   <mapping resource="com/orm/hibernate/mapping/ManyToMany.hbm.xml"/>
    
    <!-- Annotation based entities -->
    <mapping class="com.org.hibernate.entity.Student"/>
    <mapping class="com.org.hibernate.entity.Address"/>
+   
+   <mapping class="com.org.hibernate.entity.Student2AnnotationsBased"/>
+   <mapping class="com.org.hibernate.entity.CertificatesAnnotationsBased"/>
 
 </session-factory>
 </hibernate-configuration>

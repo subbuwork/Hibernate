@@ -10,44 +10,40 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.org.hibernate.entity.Certificates;
-import com.org.hibernate.entity.Student2;
+import com.org.hibernate.entity.CertificatesAnnotationsBased;
+import com.org.hibernate.entity.Student2AnnotationsBased;
 
-public class OneToManyXMLConfiguratioin {
+public class OneToManyAnnotationsBased {
 
 	private static SessionFactory factory;
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		 try{
 	         factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 	      }catch (Throwable ex) { 
 	         System.err.println("Failed to create sessionFactory object." + ex);
-	         throw new ExceptionInInitializerError(ex);     
+	         throw new ExceptionInInitializerError(ex);    
 
 	}
-		 OneToManyXMLConfiguratioin oneToManyXMLConfiguratioin = new OneToManyXMLConfiguratioin();
+		 OneToManyAnnotationsBased oneToManyAnnotationsBased = new OneToManyAnnotationsBased();
 		 
 		 /* Let us have a set of certificates for the first employee  */
-		 HashSet set1 = new HashSet();
-	      set1.add(new Certificates("MCA","AU", new Date(2010)));
-	      set1.add(new Certificates("BSC","ANU",new Date(2006)));
-	      set1.add(new Certificates("PPM","ANU",new Date(2003)));
+		 Set<CertificatesAnnotationsBased> set1 = new HashSet<CertificatesAnnotationsBased>();
+	      set1.add(new CertificatesAnnotationsBased("BPharmacy","AU", new Date(2010)));
+	      set1.add(new CertificatesAnnotationsBased("MPharmacy","ANU",new Date(2006)));
+	      set1.add(new CertificatesAnnotationsBased("MTech","ANU",new Date(2003)));
 	      
 	      /* Add employee records in the database */
-	      Integer empID1 = oneToManyXMLConfiguratioin.addStudent2("Neelima", "MUkkala",new Date(2010), set1);
+	      Integer empID1 = oneToManyAnnotationsBased.addStudent2("Jason", "Bandi",new Date(2010), set1);
 	      System.out.println("SID::"+empID1);
-	      
-	      
-
 }
-	private Integer addStudent2(String fname, String lname, Date date, Set set1) {
+	private Integer addStudent2(String fname, String lname, Date date, Set<CertificatesAnnotationsBased> set1) {
 		Session session = factory.openSession();
 	      Transaction tx = null;
 	      Integer employeeID = null;
 
 		try{
 	         tx = session.beginTransaction();
-	         Student2 student = new Student2(fname, lname, date);
+	         Student2AnnotationsBased student = new Student2AnnotationsBased(fname, lname, date);
 	         student.setCertificates(set1);
 	         employeeID = (Integer) session.save(student); 
 	         tx.commit();
