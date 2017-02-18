@@ -39,7 +39,7 @@ public class ManageManyToManyAssociationXML {
 
 	      /* Add another employee record in the database */
 	      Integer sid2 = ME.addStudent("Dilip", "Kumar", new Date(2010), certificates);
-
+          System.out.println("SID1::"+sid+":::SID2"+sid2);
 	      /* List down all the employees */
 	      ME.listStudents();;
 
@@ -56,7 +56,7 @@ public class ManageManyToManyAssociationXML {
 
 	   /* Method to add an employee record in the database */
 	   public Integer addStudent(String fname, String lname, 
-	                                            Date dob, Set cert){
+	                                            Date dob, Set<Certificates> cert){
 	      Session session = factory.openSession();
 	      Transaction tx = null;
 	      Integer employeeID = null;
@@ -76,20 +76,21 @@ public class ManageManyToManyAssociationXML {
 	   }
 
 	   /* Method to list all the employees detail */
-	   public void listStudents( ){
+	   @SuppressWarnings({ "unchecked", "deprecation" })
+	public void listStudents( ){
 	      Session session = factory.openSession();
 	      Transaction tx = null;
 	      try{
 	         tx = session.beginTransaction();
-	         List employees = session.createQuery("FROM Employee").list(); 
-	         for (Iterator iterator1 = 
-	                           employees.iterator(); iterator1.hasNext();){
-	            Student2 student = (Student2) iterator1.next(); 
+	         List<Student2> students = session.createQuery("FROM Student2").list(); 
+	         for (Iterator<Student2> iterator1 = 
+	                           students.iterator(); iterator1.hasNext();){
+	            Student2 student = iterator1.next(); 
 	            System.out.print("First Name: " + student.getfName()); 
 	            System.out.print("  Last Name: " + student.getlName()); 
 	           // System.out.println("  Salary: " + student.getSalary());
-	            Set certificates = student.getCertificates();
-	            for (Iterator iterator2 = 
+	            Set<Certificates> certificates = student.getCertificates();
+	            for (Iterator<Certificates> iterator2 = 
 	                         certificates.iterator(); iterator2.hasNext();){
 	                  Certificates certName = (Certificates) iterator2.next(); 
 	                  System.out.println("Certificate: " + certName.getdName()); 
@@ -110,7 +111,7 @@ public class ManageManyToManyAssociationXML {
 	      try{
 	         tx = session.beginTransaction();
 	         Student2 student = 
-	                    (Student2)session.get(Student2.class, sid); 
+	                    session.get(Student2.class, sid); 
 	         student.setlName(uName);;
 	         session.update(student);
 	         tx.commit();
@@ -128,7 +129,7 @@ public class ManageManyToManyAssociationXML {
 	      try{
 	         tx = session.beginTransaction();
 	         Student2 employee = 
-	                   (Student2)session.get(Student2.class, sid); 
+	                   session.get(Student2.class, sid); 
 	         session.delete(employee); 
 	         tx.commit();
 	      }catch (HibernateException e) {

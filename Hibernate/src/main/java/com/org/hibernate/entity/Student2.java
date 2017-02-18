@@ -15,7 +15,7 @@ public class Student2 {
 	private String fName;
 	private String lName;
     private Date dob;
-    private Set certificates;
+    private Set<Certificates> certificates;
     
 	public Student2() {}
 
@@ -87,11 +87,11 @@ public class Student2 {
 		this.dob = dob;
 	}
 
-	public Set getCertificates() {
+	public Set<Certificates> getCertificates() {
 		return certificates;
 	}
 
-	public void setCertificates(Set certificates) {
+	public void setCertificates(Set<Certificates> certificates) {
 		this.certificates = certificates;
 	}
 	

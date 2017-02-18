@@ -40,6 +40,7 @@ public class OneToManyXMLConfiguratioin {
 	      
 
 }
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private Integer addStudent2(String fname, String lname, Date date, Set set1) {
 		Session session = factory.openSession();
 	      Transaction tx = null;

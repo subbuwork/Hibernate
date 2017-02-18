@@ -54,7 +54,8 @@ public class ManageManyToOneXmlConfiguration {
 	/*
 	 * Method to add Address into address table...
 	 */
-	 public AddressXmlMapping addAddress(String street, String city, 
+	 @SuppressWarnings({ "rawtypes", "deprecation" })
+	public AddressXmlMapping addAddress(String street, String city, 
              String state, int zipcode,String country) {
 				Session session = factory.openSession();
 				Transaction tx = null;
