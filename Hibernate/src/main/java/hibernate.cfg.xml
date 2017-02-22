@@ -26,8 +26,8 @@
    <mapping class="com.org.hibernate.entity.Student"/>
    <mapping class="com.org.hibernate.entity.Address"/>
    
-   <mapping class="com.org.hibernate.entity.Student2AnnotationsBased"/>
-   <mapping class="com.org.hibernate.entity.CertificatesAnnotationsBased"/>
+   <!-- <mapping class="com.org.hibernate.entity.Student2AnnotationsBased"/>
+   <mapping class="com.org.hibernate.entity.CertificatesAnnotationsBased"/> -->
 
 </session-factory>
 </hibernate-configuration>

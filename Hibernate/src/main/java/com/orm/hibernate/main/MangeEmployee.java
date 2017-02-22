@@ -28,10 +28,11 @@ public class MangeEmployee {
      try {
     	 sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
     	 MangeEmployee me = new MangeEmployee();
-    	 me.addEmployee("varsith11","bandi","India",1455600);
+    	 me.addEmployee("Harsith","bandi","India",12000);
+    	 me.addEmployee("Niharika","bandi","India",15000);
     	 me.getAllEmployees();
-    	 me.updateEmployee(3,12500);
-    	 me.deleteEmployee(5);
+    	// me.updateEmployee(3,12500);
+    	 //me.deleteEmployee(5);
 		
 	} catch (HibernateException e) {
 		e.printStackTrace();
