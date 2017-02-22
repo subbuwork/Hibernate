@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 22, 2017 6:04:36 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.reverse.eng.Department" table="department" catalog="hibernate_schema" optimistic-lock="version">
+        <id name="did" type="int">
+            <column name="dId" />
+            <generator class="assigned" />
+        </id>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+        <property name="dname" type="string">
+            <column name="dname" />
+        </property>
+    </class>
+</hibernate-mapping>

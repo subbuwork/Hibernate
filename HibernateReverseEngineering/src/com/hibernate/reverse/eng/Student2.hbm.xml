@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 22, 2017 6:04:36 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.reverse.eng.Student2" table="student2" catalog="hibernate_schema" optimistic-lock="version">
+        <id name="sid" type="int">
+            <column name="sid" />
+            <generator class="assigned" />
+        </id>
+        <property name="fname" type="string">
+            <column name="fName" length="45" />
+        </property>
+        <property name="lname" type="string">
+            <column name="lName" length="45" />
+        </property>
+        <property name="dob" type="date">
+            <column name="dob" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

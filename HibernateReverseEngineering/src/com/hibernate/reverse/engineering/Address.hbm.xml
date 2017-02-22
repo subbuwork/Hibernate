@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 22, 2017 6:01:37 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.reverse.engineering.Address" table="address" catalog="hibernate_schema" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="cityName" type="string">
+            <column name="city_name" />
+        </property>
+        <property name="countryName" type="string">
+            <column name="country_name" />
+        </property>
+        <property name="stateName" type="string">
+            <column name="state_name" />
+        </property>
+        <property name="streetName" type="string">
+            <column name="street_name" />
+        </property>
+        <property name="zipcode" type="java.lang.Integer">
+            <column name="zipcode" />
+        </property>
+        <set name="students" table="student" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="address_id" />
+            </key>
+            <one-to-many class="com.hibernate.reverse.engineering.Student" />
+        </set>
+    </class>
+</hibernate-mapping>

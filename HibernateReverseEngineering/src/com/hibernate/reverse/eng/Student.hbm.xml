@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 22, 2017 6:04:36 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.reverse.eng.Student" table="student" catalog="hibernate_schema" optimistic-lock="version">
+        <id name="sid" type="int">
+            <column name="sid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="address" class="com.hibernate.reverse.eng.Address" fetch="select">
+            <column name="address_id" />
+        </many-to-one>
+        <property name="branchName" type="string">
+            <column name="branch_name" />
+        </property>
+        <property name="colName" type="string">
+            <column name="col_name" />
+        </property>
+        <property name="FName" type="string">
+            <column name="f_name" />
+        </property>
+        <property name="grade" type="string">
+            <column name="grade" />
+        </property>
+        <property name="LName" type="string">
+            <column name="l_name" />
+        </property>
+    </class>
+</hibernate-mapping>
